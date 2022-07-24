@@ -29,18 +29,17 @@
             <div class="overview">
               <h1 class="cityName" id="city"></h1>
               <ul>
-                <li>Wednesday, 11:33</li>
-                <li>20 July 2022</li>
+                <li>
+                  Last updated: <span id="day"></span> <span id="time"> </span>
+                </li>
+                <li><span id="today"> </span></li>
               </ul>
             </div>
+
             <div class="row">
               <div class="col-6">
                 <div class="clearfix-weather-temp">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                    alt="Clear"
-                    class="float-left"
-                  />
+                  <img src="" alt="Clear" id="icon" class="float-left" />
 
                   <strong id="temperature"> </strong>
                   <span class="units">°C|<a href="#">°F </a></span>
@@ -54,14 +53,16 @@
               <div class="col-6">
                 <ul>
                   <li>Precipitation: <span id="humidity"></span> %</li>
-                  <li>Humidity: 73%</li>
+
                   <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary">
-                    Humidity
+                  <button type="button" class="btn btn-secondary" id="min">
+                    Min temp
                   </button>
-                  <button type="button" class="btn btn-secondary">Wind</button>
+                  <button type="button" class="btn btn-secondary" id="max">
+                    Max temp
+                  </button>
                 </div>
               </div>
             </div>
