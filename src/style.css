@@ -6,6 +6,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
   color: dimgrey;
   font-size: 15px;
 }
@@ -13,18 +14,44 @@ li {
 .wholeSettings {
   font-family: "Noto Serif", serif;
 }
-.weatherApp {
-  max-width: 600px;
+.weatherApp-wrapper {
   margin: 30px auto;
+
+  max-width: 600px;
+}
+.weatherApp {
   padding: 20px;
   border: 1px solid rgb(184, 181, 181);
   border-radius: 10px;
 }
+.overview {
+  margin-bottom: 20px;
+}
+
+.clearfix-weather-temp img {
+  margin-right: 10px;
+  height: 75px;
+  width: 75px;
+  position: relative;
+  top: -20px;
+}
 .cityName {
   color: rgb(240, 176, 176);
   font-size: 40px;
-  margin-bottom: 0;
+  margin-bottom: 4px;
   text-align: left;
   line-height: 40px;
   font-weight: bold;
+}
+
+.clearfix-weather-temp strong {
+  font-size: 75px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  top: -40px;
+  font-size: 16px;
 }

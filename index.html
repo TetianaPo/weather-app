@@ -12,6 +12,7 @@
     />
 
     <title>Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,88 +23,102 @@
   </head>
   <body class="wholeSettings">
     <div class="container">
-      <div class="weatherApp">
-        <h1 class="cityName">Kyiv</h1>
-        <ul>
-          <li>Wednesday, 11:33</li>
-          <li>20 July 2022</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt="Clear"
-            />
-            22 °C|°F
-            <hr />
+      <div class="weatherApp-wrapper">
+        <div class="weatherApp">
+          <div class="main">
+            <div class="overview">
+              <h1 class="cityName" id="city"></h1>
+              <ul>
+                <li>Wednesday, 11:33</li>
+                <li>20 July 2022</li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix-weather-temp">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                    alt="Clear"
+                    class="float-left"
+                  />
 
-            Clear
-          </div>
+                  <strong id="temperature"> </strong>
+                  <span class="units">°C|<a href="#">°F </a></span>
 
-          <div class="col-6">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind 5 km/h</li>
-            </ul>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-secondary">Humidity</button>
-              <button type="button" class="btn btn-secondary">Wind</button>
+                  <hr />
+
+                  <span id="description"> </span>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <ul>
+                  <li>Precipitation: <span id="humidity"></span> %</li>
+                  <li>Humidity: 73%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </ul>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">
+                    Humidity
+                  </button>
+                  <button type="button" class="btn btn-secondary">Wind</button>
+                </div>
+              </div>
             </div>
-          </div>
-          <br />
-          <br />
-          <div class="row">
-            <div class="col">28 °C</div>
-            <div class="col">21 °C</div>
-            <div class="col">22 °C</div>
-            <div class="col">30 °C</div>
-            <div class="col">21 °C</div>
-            <div class="col">25 °C</div>
-            <div class="w-100"></div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
-                alt="rain"
-              />
+            <br />
+            <br />
+            <div class="row">
+              <div class="col">28 °C</div>
+              <div class="col">21 °C</div>
+              <div class="col">22 °C</div>
+              <div class="col">30 °C</div>
+              <div class="col">21 °C</div>
+              <div class="col">25 °C</div>
+              <div class="w-100"></div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+                  alt="rain"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                  alt="partlyCloudy"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/thunderstorms.png"
+                  alt="thunderstorms"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                  alt="Clear"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+                  alt="rain_s_cloudy"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                  alt="Clear"
+                />
+              </div>
+              <div class="w-100"></div>
+              <div class="col date">July 21</div>
+              <div class="col date">July 22</div>
+              <div class="col date">July 23</div>
+              <div class="col date">July 24</div>
+              <div class="col date">July 25</div>
+              <div class="col date">July 26</div>
             </div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                alt="partlyCloudy"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/thunderstorms.png"
-                alt="thunderstorms"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
-                alt="rain_s_cloudy"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="w-100"></div>
-            <div class="col date">July 21</div>
-            <div class="col date">July 22</div>
-            <div class="col date">July 23</div>
-            <div class="col date">July 24</div>
-            <div class="col date">July 25</div>
-            <div class="col date">July 26</div>
           </div>
         </div>
         <small>
@@ -113,8 +128,7 @@
           by Tetiana Poroshchai
         </small>
       </div>
-
-      <script src="src/index.js"></script>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
