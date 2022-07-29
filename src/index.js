@@ -53,32 +53,6 @@ function formDate(dateDay) {
 let day = document.querySelector("#day");
 day.innerHTML = formDate(now);
 
-function formatDate(curDate) {
-  let dayToday = curDate.getDate();
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  let monthIndex = curDate.getMonth();
-  let month = months[monthIndex];
-  let year = curDate.getFullYear();
-  return `${dayToday} ${month} ${year}`;
-}
-let Today = new Date();
-let curdate = document.querySelector("#today");
-curdate.innerHTML = formDate(Today);
-
 function search(city) {
   let apiKey = "dd4d68aa948c5b775af8d0b5d939e242";
 

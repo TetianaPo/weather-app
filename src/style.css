@@ -43,6 +43,9 @@ li {
   line-height: 40px;
   font-weight: bold;
 }
+.description {
+  text-transform: capitalize;
+}
 
 .clearfix-weather-temp strong {
   font-size: 75px;
