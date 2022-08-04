@@ -45,6 +45,15 @@ li {
 }
 .description {
   text-transform: capitalize;
+  color: grey;
+}
+
+.max {
+  color: rgb(240, 176, 176);
+}
+
+.min {
+  color: grey;
 }
 .weather-forecast {
   margin-top: 20px;
